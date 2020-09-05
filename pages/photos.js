@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import {gql, useQuery} from '@apollo/client'
 import {useEffect,useState} from 'react'
 import Head from 'next/head'
+import Errors from "../components/Errors";
 const query = gql`query{
     photos{
       url
@@ -110,6 +111,7 @@ const Photos =()=>{
       </Head>
         <SimpleReactLightbox>
         <main style={{background: "#fafafa"}}>
+        {iserror && <Errors seterror={setiserror}/>}
         <div className="mob-pad"></div>
             <h1 className="heading-head heading-gallery sans" data-aos="fade">Tine.Photographer's Gallery</h1>
             <div className="gen-wrapper" >
