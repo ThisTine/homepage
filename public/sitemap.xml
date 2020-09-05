@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"  xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"> 
   <url>
     <loc>https://www.thistine.com</loc>
-    <lastmod>2020-9-05</lastmod>
+    <lastmod>2020-09-05</lastmod>
     <priority>1.0</priority>
   </url>
     <url>
     <loc>https://www.thistine.com/about/</loc>
-    <lastmod>2020-9-05</lastmod>
+    <lastmod>2020-09-05</lastmod>
     <priority>0.5</priority>
   </url>
     <url>
     <loc>https://www.thistine.com/photos/</loc>
-    <lastmod>2020-9-05</lastmod>
+    <lastmod>2020-09-05</lastmod>
     <priority>0.8</priority>
   </url>
 <url>
     <loc>https://www.thistine.com/projects/</loc>
-    <lastmod>2020-9-05</lastmod>
+    <lastmod>2020-09-05</lastmod>
     <priority>0.5</priority>
   </url>
 </urlset>
