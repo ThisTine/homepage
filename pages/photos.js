@@ -12,10 +12,10 @@ const query = gql`query{
     }
   }`
 
-const Photos =()=>{
+const Photos =  ()=>{
     const [iserror,setiserror] = useState(false)
     const [picdata , setpicdata] = useState(["DSC_2462.jpg","DSC_0946_1.jpg","DSC_0946_1.jpg","DSC_0946_1.jpg"])
-    const {data,loading,error} = useQuery(query)
+    const {data,loading,error} =  useQuery(query)
     useEffect(()=>{
         if(!loading){
             const rng = Math.floor(Math.random() * (data.photos.length-4));  

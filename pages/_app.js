@@ -5,7 +5,7 @@ import Navbar from '../components/Nav'
 import {useEffect} from 'react'
 import AOS from 'aos'
 import fetch from 'cross-fetch'
-
+import { getDataFromTree } from "@apollo/client/react/ssr";
 import Router from 'next/router';
 import NProgress from 'nprogress'; //nprogress module
 import 'nprogress/nprogress.css'; //styles of nprogress
@@ -32,11 +32,12 @@ import { ApolloProvider } from '@apollo/client';
 
 
 
-const MyApp = ({ Component, pageProps })=> {
+const MyApp = ({ Component, pageProps,test })=> {
   useEffect(()=>{
     AOS.init({
       duration : 1000
     })
+    console.log(test)
   },[])
     return (
       <>
@@ -47,5 +48,10 @@ const MyApp = ({ Component, pageProps })=> {
       </>
     )
   }
+
+MyApp.getInitialProps = async (ctx) =>{
+  const res = await getDataFromTree(MyApp)
+  return {test: true}
+}
 
   export default MyApp
