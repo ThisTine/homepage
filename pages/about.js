@@ -50,8 +50,8 @@ const About =()=>{
         title : "About Tine | Sittichok ouamsiri (Tine)",
         description : `Sittichok Ouamsiri or Tine for short.A ${age()} years old student.Know more about my basic skills,awards,favorite`,
         api : "https://api.thistine.com/",
-        twiiterogimg : "/img/twitterog-1.jpg",
-        fbogimg : "/img/fbog-1.jpg",
+        twiiterogimg : "https://www.thistine.com/img/twitterog-1.jpg",
+        fbogimg : "https://www.thistine.com/img/fbog-1.jpg",
         ogtype: "thistine:about",
         weblink: "https://www.thistine.com/about"
       }

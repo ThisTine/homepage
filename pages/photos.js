@@ -55,8 +55,8 @@ const Photos =()=>{
     const seo = {
         title : "Tine.photographer | Sittichok ouamsiri (Tine)",
         description : "My picture gallery under the name Tine.photographer.",
-        twiiterogimg : "/img/tinephotograpgerogtw.jpg",
-        fbogimg : "/img/tinephotograpgerog.jpg",
+        twiiterogimg : "https://www.thistine.com/img/tinephotograpgerogtw.jpg",
+        fbogimg : "https://www.thistine.com/img/tinephotograpgerog.jpg",
         ogtype: "thistine:photos",
         weblink: "https://www.thistine.com/photos/"
       }

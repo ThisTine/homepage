@@ -62,8 +62,8 @@ const search =()=>{
         title : "Tine.photographer | Sittichok ouamsiri (Tine)",
         description : "An information about my projects. Randomi, Typing effect, shorturl, Ouropinion",
         api : "https://api.thistine.com/",
-        twiiterogimg : "/img/twitterog-1.jpg",
-        fbogimg : "/img/fbog-1.jpg",
+        twiiterogimg : "https://www.thistine.com/img/twitterog-1.jpg",
+        fbogimg : "https://www.thistine.com/img/fbog-1.jpg",
         ogtype: "thistine:projects",
         weblink: "https://www.thistine.com/projects/Search"
       }

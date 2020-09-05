@@ -17,8 +17,8 @@ export default function Home() {
     title : "Thistine | Sittichok ouamsiri (Tine)",
     description : "An official website of Sittichok Ouamsiri (Tine). A sutdent, photographer, fullstack developer, artist.",
     api : "https://api.thistine.com/",
-    twiiterogimg : "/img/twitterog-1.jpg",
-    fbogimg : "/img/fbog-1.jpg",
+    twiiterogimg : "https://www.thistine.com/img/twitterog-1.jpg",
+    fbogimg : "https://www.thistine.com/img/fbog-1.jpg",
     ogtype: "thistine:home",
     weblink: "https://www.thistine.com/"
   }
