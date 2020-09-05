@@ -64,7 +64,7 @@ const search =()=>{
         api : "https://api.thistine.com/",
         twiiterogimg : "https://www.thistine.com/img/twitterog-1.jpg",
         fbogimg : "https://www.thistine.com/img/fbog-1.jpg",
-        ogtype: "thistine:projects",
+        ogtype: "website",
         weblink: "https://www.thistine.com/projects/Search"
       }
     

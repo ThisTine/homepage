@@ -57,7 +57,7 @@ const Photos =()=>{
         description : "My picture gallery under the name Tine.photographer.",
         twiiterogimg : "https://www.thistine.com/img/tinephotograpgerogtw.jpg",
         fbogimg : "https://www.thistine.com/img/tinephotograpgerog.jpg",
-        ogtype: "thistine:photos",
+        ogtype: "website",
         weblink: "https://www.thistine.com/photos/"
       }
     const textsplit = (text)=>{

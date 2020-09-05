@@ -19,7 +19,7 @@ export default function Home() {
     api : "https://api.thistine.com/",
     twiiterogimg : "https://www.thistine.com/img/twitterog-1.jpg",
     fbogimg : "https://www.thistine.com/img/fbog-1.jpg",
-    ogtype: "thistine:home",
+    ogtype: "website",
     weblink: "https://www.thistine.com/"
   }
   const popupclose = ()=>{
