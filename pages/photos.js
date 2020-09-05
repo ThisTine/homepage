@@ -33,7 +33,12 @@ const Photos =  ()=>{
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         },
-        spaceBetween: 30
+        spaceBetween: 30,
+        loop:true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        }
       }
       const textcut= (text)=>{
         if(text.length >= 30){
@@ -139,5 +144,6 @@ const Photos =  ()=>{
         </>
     )
 }
+
 
 export default Photos
