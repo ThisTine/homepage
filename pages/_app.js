@@ -17,7 +17,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 
 const client = new ApolloClient({
-   ssrMode: true,
+  ssrMode: true,
   link: new HttpLink({ uri: 'https://api.thistine.com/graphql', fetch ,  fetchOptions: {
     mode: 'no-cors',
   }}),
