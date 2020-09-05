@@ -3,6 +3,7 @@ import Swiper from 'react-id-swiper'
 import Footer from "../components/Footer";
 import {gql, useQuery} from '@apollo/client'
 import {useEffect,useState} from 'react'
+
 import Head from 'next/head'
 import Errors from "../components/Errors";
 const query = gql`query{
