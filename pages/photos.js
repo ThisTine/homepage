@@ -14,7 +14,7 @@ const query = gql`query{
 
 const Photos =  ()=>{
     const [iserror,setiserror] = useState(false)
-    const [picdata , setpicdata] = useState([])
+    const [picdata , setpicdata] = useState(["DSC_2462.jpg","DSC_0946_1.jpg","DSC_0946_1.jpg","DSC_0946_1.jpg"])
     const {data,loading,error} =  useQuery(query)
     useEffect(()=>{
         if(!loading){
@@ -36,7 +36,7 @@ const Photos =  ()=>{
         spaceBetween: 30,
         loop:true,
         autoplay: {
-          delay: 3000,
+          delay: 5000,
           disableOnInteraction: false
         }
       }
