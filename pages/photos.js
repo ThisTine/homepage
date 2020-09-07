@@ -152,10 +152,6 @@ Photos.getInitialProps = async (ctx) =>{
         ` }),
         })
     const jdata = await fdatas.json()
-    let loading = true
-    if(jdata.errors){
-        loading = false
-    }
     
     return {loading : false, data : jdata.data,error: jdata.errors}
 }

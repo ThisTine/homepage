@@ -16,10 +16,9 @@ query{awards{
   `
 
 
-const About =()=>{
+const About =({ loading, error, data })=>{
     const [iserror,setiserror] = useState(false)
     const Moredata = ()=>{
-        const { loading, error, data } = useQuery(que)
         if(error){return (
             setiserror(true)
         )}
@@ -159,6 +158,25 @@ const About =()=>{
 
         
     )
+}
+
+About.getInitialProps = async (ctx) =>{
+    const fdatas =  await fetch('https://api.thistine.com/graphql', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: `
+        { awards{
+            place
+            name
+            _id
+            location
+            year
+          }}
+        ` }),
+        })
+    const jdata = await fdatas.json()
+    
+    return {loading : false, data : jdata.data,error: jdata.errors}
 }
 
 export default About

@@ -1,12 +1,12 @@
 
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 import Footer from '../components/Footer'
-import {gql , useQuery} from '@apollo/client'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 import { FaGithub, FaDownload, FaYoutube, FaInstagram, FaFacebook } from 'react-icons/fa'
 import {GoBrowser} from 'react-icons/go'
 import Errors from '../components/Errors'
+import fetch from 'isomorphic-fetch'
 const Popup = ({props,popset,ispopupshow})=>{
     return(
         <>
@@ -36,25 +36,8 @@ const Popup = ({props,popset,ispopupshow})=>{
     )
 }
 
-const que = gql`query{
-    projects{
-  _id
-      name
-      year
-      description
-      type
-      language
-      framework
-      facebook
-      instagram
-      youtube
-      website
-      googleplay
-      github
-    }
-    }`
 
-const Project =()=>{
+const Project =({data,loading,error})=>{
     const [iserror,setiserror] = useState(false)
     const router = useRouter()
     const seo = {
@@ -69,7 +52,6 @@ const Project =()=>{
     
     const [ispopup,setispop] = useState(false)
     const [popdata,setpopdata] = useState({})
-    const {loading,data,error} = useQuery(que)
     const [ispopupshow,setispopupshow] = useState(true)
     const textcut= (text)=>{
         if(text.length >= 100){
@@ -156,6 +138,33 @@ const Project =()=>{
         <Footer/>
         </main>
     )
+}
+
+Project.getInitialProps = async (ctx) =>{
+    const fdatas =  await fetch('https://api.thistine.com/graphql', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: `
+        {projects{
+            _id
+                name
+                year
+                description
+                type
+                language
+                framework
+                facebook
+                instagram
+                youtube
+                website
+                googleplay
+                github
+              }}
+        ` }),
+        })
+    const jdata = await fdatas.json()
+    
+    return {loading : false, data : jdata.data,error: jdata.errors}
 }
 
 export default Project
