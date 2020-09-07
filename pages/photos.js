@@ -3,20 +3,14 @@ import Swiper from 'react-id-swiper'
 import Footer from "../components/Footer";
 import {gql, useQuery} from '@apollo/client'
 import {useEffect,useState} from 'react'
-
+import fetch from 'isomorphic-fetch'
 import Head from 'next/head'
 import Errors from "../components/Errors";
-const query = gql`query{
-    photos{
-      url
-      caption
-    }
-  }`
 
-const Photos =  ()=>{
+const Photos =  ({data,loading,error})=>{
     const [iserror,setiserror] = useState(false)
     const [picdata , setpicdata] = useState(["DSC_2462.jpg","DSC_0946_1.jpg","DSC_0946_1.jpg","DSC_0946_1.jpg"])
-    const {data,loading,error} =  useQuery(query)
+
     useEffect(()=>{
         if(!loading){
             const rng = Math.floor(Math.random() * (data.photos.length-4));  
@@ -144,6 +138,26 @@ const Photos =  ()=>{
         </SimpleReactLightbox>
         </>
     )
+}
+
+Photos.getInitialProps = async (ctx) =>{
+    const fdatas =  await fetch('https://api.thistine.com/graphql', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: `
+        { photos{
+            url
+            caption
+          }}
+        ` }),
+        })
+    const jdata = await fdatas.json()
+    let loading = true
+    if(jdata.errors){
+        loading = false
+    }
+    
+    return {loading : false, data : jdata.data,error: jdata.errors}
 }
 
 

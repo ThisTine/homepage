@@ -5,7 +5,7 @@ import Navbar from '../components/Nav'
 import {useEffect} from 'react'
 import AOS from 'aos'
 import fetch from 'cross-fetch'
-import { getDataFromTree } from "@apollo/client/react/ssr";
+
 import Router from 'next/router';
 import NProgress from 'nprogress'; //nprogress module
 import 'nprogress/nprogress.css'; //styles of nprogress
@@ -17,7 +17,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 
 const client = new ApolloClient({
-  ssrMode: true,
+   ssrMode: true,
   link: new HttpLink({ uri: 'https://api.thistine.com/graphql', fetch ,  fetchOptions: {
     mode: 'no-cors',
   }}),
@@ -32,12 +32,11 @@ import { ApolloProvider } from '@apollo/client';
 
 
 
-const MyApp = ({ Component, pageProps,test })=> {
+const MyApp = ({ Component, pageProps })=> {
   useEffect(()=>{
     AOS.init({
       duration : 1000
     })
-    console.log(test)
   },[])
     return (
       <>
@@ -48,10 +47,5 @@ const MyApp = ({ Component, pageProps,test })=> {
       </>
     )
   }
-
-MyApp.getInitialProps = async (ctx) =>{
-  const res = await getDataFromTree(MyApp)
-  return {test: true}
-}
 
   export default MyApp
