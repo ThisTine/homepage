@@ -7,17 +7,17 @@ import fetch from 'isomorphic-fetch'
 import Head from 'next/head'
 import Errors from "../components/Errors";
 
-const Photos =  ({data,loading,error})=>{
+const Photos =  ({data,loading,error,arr})=>{
     const [iserror,setiserror] = useState(false)
-    const [picdata , setpicdata] = useState(["DSC_2462.jpg","DSC_0946_1.jpg","DSC_0946_1.jpg","DSC_0946_1.jpg"])
+    const [picdata , setpicdata] = useState(arr)
 
-    useEffect(()=>{
-        if(!loading){
-            const rng = Math.floor(Math.random() * (data.photos.length-4));  
-            const phot = data.photos
-            setpicdata([phot[rng].url ,phot[rng+1].url,phot[rng+2].url,phot[rng+3].url] )
-        }
-    },[loading])
+    // useEffect(()=>{
+    //     if(!loading){
+    //         const rng = Math.floor(Math.random() * (data.photos.length-4));  
+    //         const phot = data.photos
+    //         setpicdata([phot[rng].url ,phot[rng+1].url,phot[rng+2].url,phot[rng+3].url] )
+    //     }
+    // },[loading])
     const params = {
         pagination: {
           el: '.swiper-pagination',
@@ -65,9 +65,16 @@ const Photos =  ({data,loading,error})=>{
         const split = text.split(".jpg");
         return split[0]
     }
+    useEffect(()=>{
+        if(error){
+        setiserror(true)            
+        }
+
+    },[])
     const Loadgallery = ()=>{
-        if(error){return (
-            setiserror(true)
+        if(error){
+            return (
+            <h1>Error</h1>
         )}
         if(loading){return (<div className="loadercontainer"><div className="loader"></div></div>)}
         return (<div className="gallery-ga">
@@ -82,6 +89,21 @@ const Photos =  ({data,loading,error})=>{
                 </div>
             )
         })}</div>)
+    }
+
+    const Slider = ()=>{
+        if(picdata.length !== 0){
+            return(
+                <div data-aos="fade"><Swiper {...params}>
+                    <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[0])}-min.jpg)`}}></div>
+                    <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[1])}-min.jpg)`}}></div>
+                    <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[2])}-min.jpg)`}}></div>
+                    <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[3])}-min.jpg)`}}></div>
+                </Swiper></div>
+            )
+        }
+        return(<h1>Error</h1>)
+
     }
     return(
         <>
@@ -116,12 +138,7 @@ const Photos =  ({data,loading,error})=>{
             <h1 className="heading-head heading-gallery sans" data-aos="fade">Tine.Photographer's Gallery</h1>
             <div className="gen-wrapper" >
          <div className="gallery-wrp" data-aos="fade-in" data-aos-duration="1000" style={{background:"white"}}>
-{ !loading &&   <div data-aos="fade"><Swiper {...params}>
-                <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[0])}-min.jpg)`}}></div>
-                <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[1])}-min.jpg)`}}></div>
-                <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[2])}-min.jpg)`}}></div>
-                <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[3])}-min.jpg)`}}></div>
-            </Swiper></div>}
+{ <Slider/> }
             </div>
 
             </div>
@@ -152,8 +169,17 @@ Photos.getInitialProps = async (ctx) =>{
         ` }),
         })
     const jdata = await fdatas.json()
+    const randomarr = (data)=>{
+        if(data){
+            const rng = Math.floor(Math.random() * (data.photos.length-4));  
+            const phot = data.photos
+            return [phot[rng].url ,phot[rng+1].url,phot[rng+2].url,phot[rng+3].url]
+        }
+        return []
+    }
     
-    return {loading : false, data : jdata.data,error: jdata.errors}
+    
+    return {loading : false, data : jdata.data,error: jdata.errors,arr:randomarr(jdata.data)}
 }
 
 
