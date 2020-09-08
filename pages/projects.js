@@ -94,7 +94,7 @@ const Project =({data,loading,error})=>{
     <meta itemProp="description" content={seo.description}/>
     <meta itemProp="image" content={seo.api+seo.fbogimg}/>
     <link rel="shortcut icon" href="/img/me.jpg" />
-    <meta name="twitter:card" content={seo.twiiterogimg}/>
+    <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@sir_tine"/>
     <meta name="twitter:title" content={seo.title}/>
     <meta name="twitter:description" content={seo.description}/>
