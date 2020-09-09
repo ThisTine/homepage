@@ -64,7 +64,7 @@ const About =({ loading, error, data })=>{
         <meta name="description" content={seo.description} />
         <link rel="canonical" href={seo.weblink} />
         <meta itemProp="name" content={seo.title} />
-        <meta itemProp="description" content={seo.description}/>
+        <meta itemProp="description" content={`${seo.description} ${data.awards.map(item=>(`${item.place}-${item.name}(${item.year})`))}`}/>
         <meta itemProp="image" content={seo.api+seo.fbogimg}/>
         <link rel="shortcut icon" href="/img/me.jpg" />
         <meta name="twitter:card" content="summary_large_image"/>

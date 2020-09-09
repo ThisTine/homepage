@@ -113,7 +113,7 @@ const Photos =  ({data,loading,error,arr})=>{
         <meta name="description" content={seo.description} />
         <link rel="canonical" href={seo.weblink} />
         <meta itemProp="name" content={seo.title} />
-        <meta itemProp="description" content={seo.description}/>
+        <meta itemProp="description" content={`${seo.description} ${data.photos.map(item=>(`${item.caption}`))}`}/>
         <meta itemProp="image" content={seo.fbogimg}/>
         <link rel="shortcut icon" href="/img/me.jpg" />
         <meta name="twitter:card" content="summary_large_image"/>

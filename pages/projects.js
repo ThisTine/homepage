@@ -42,7 +42,7 @@ const Project =({data,loading,error})=>{
     const router = useRouter()
     const seo = {
         title : "Tine.photographer | Sittichok ouamsiri (Tine)",
-        description : "An information about my projects. Randomi, Typing effect, shorturl, Ouropinion",
+        description : "An information about my projects.",
         api : "https://api.thistine.com/",
         twiiterogimg : "https://www.thistine.com/img/twitterog-1.jpg",
         fbogimg : "https://www.thistine.com/img/fbog-1.jpg",
@@ -88,7 +88,7 @@ const Project =({data,loading,error})=>{
     <Head>
     <title>Projects | Sittichok ouamsiri (Tine) </title>
     <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="description" content={seo.description} />
+    <meta name="description" content={`${seo.description} ${data.projects.map(item=>(`${item.name} - ${item.description}`))}`} />
     <link rel="canonical" href={seo.weblink} />
     <meta itemProp="name" content={seo.title} />
     <meta itemProp="description" content={seo.description}/>
