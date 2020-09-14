@@ -15,7 +15,7 @@ export default function Home() {
   const [ispopupshow,setispopupshow] = useState(true)
   const seo = {
     title : "Thistine | Sittichok ouamsiri (Tine)",
-    description : "An official website of Sittichok Ouamsiri (Tine). A sutdent, photographer, fullstack developer, artist.",
+    description : "An official website of Sittichok Ouamsiri (Tine) aka Thistine. A sutdent, photographer, fullstack developer, artist.",
     api : "https://api.thistine.com/",
     twiiterogimg : "https://www.thistine.com/img/twitterog-1.jpg",
     fbogimg : "https://www.thistine.com/img/fbog-1.jpg",

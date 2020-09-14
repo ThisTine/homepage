@@ -55,7 +55,7 @@ const Photos =  ({data,loading,error,arr})=>{
     }
     const seo = {
         title : "Tine.photographer | Sittichok ouamsiri (Tine)",
-        description : "My picture gallery under the name Tine.photographer.",
+        description : "(Sittichok ouamsiri) Thistine's picture gallery under the name Tine.photographer.",
         twiiterogimg : "https://www.thistine.com/img/tinephotograpgerogtw.jpg",
         fbogimg : "https://www.thistine.com/img/tinephotograpgerog.jpg",
         ogtype: "website",

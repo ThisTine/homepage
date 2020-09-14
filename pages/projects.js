@@ -42,7 +42,7 @@ const Project =({data,loading,error})=>{
     const router = useRouter()
     const seo = {
         title : "Tine.photographer | Sittichok ouamsiri (Tine)",
-        description : "An information about my projects.",
+        description : "An information about (sittichok oaumsiri) Thistine's projects.",
         api : "https://api.thistine.com/",
         twiiterogimg : "https://www.thistine.com/img/twitterog-1.jpg",
         fbogimg : "https://www.thistine.com/img/fbog-1.jpg",
