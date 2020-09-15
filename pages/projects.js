@@ -92,7 +92,7 @@ const Project =({data,loading,error})=>{
     <link rel="canonical" href={seo.weblink} />
     <meta itemProp="name" content={seo.title} />
     <meta itemProp="description" content={seo.description}/>
-    <meta itemProp="image" content={seo.api+seo.fbogimg}/>
+    <meta itemProp="image" content={seo.fbogimg}/>
     <link rel="shortcut icon" href="/img/me.jpg" />
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@sir_tine"/>

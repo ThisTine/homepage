@@ -48,6 +48,35 @@ body{
     margin: 0;
     padding: 0;
 }
+.piccap-soc{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.soc{
+    background-color: #e6e4e4;
+    margin: 20px 0;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+.piccap>h1{
+    font-size: 3.5rem;
+}
+.piccap-soc-btn{
+    margin: 0 30px;
+    font-size: 9rem !important;
+    color: rgb(53, 53, 53) !important;
+}
+
+.piccap-soc-btn:hover{
+    transition: all 0.5s;
+    color: rgb(255, 187, 0) !important;
+}
+.indpic{
+    padding: 30px 0;
+    width: 100%;
+}
 .c404{
     display: flex;
     justify-content: center;
