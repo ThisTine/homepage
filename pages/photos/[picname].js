@@ -2,11 +2,13 @@ import fetch from 'isomorphic-fetch'
 import {useEffect} from 'react'
 import Head from 'next/head'
 import { FaFirefoxBrowser, FaInstagram } from 'react-icons/fa'
-import Footer from '../../../components/Footer'
+import Footer from '../../components/Footer'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 const Picname = ({picdata,que})=>{
     const router = useRouter()
+    const {picname} = router.query()
+    console.log(picname)
     const capital = (text)=>{
         return text.charAt(0).toUpperCase() + text.slice(1)
     }
