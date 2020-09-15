@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 const Picname = ({picdata,que})=>{
     const router = useRouter()
-    const {picname} = router.query()
+    const {picname} = router.query
     console.log(picname)
     const capital = (text)=>{
         return text.charAt(0).toUpperCase() + text.slice(1)
