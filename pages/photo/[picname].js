@@ -33,7 +33,7 @@ const Picname = ({picdata,que})=>{
         twiiterogimg : `https://storage.googleapis.com/thistinestorage/photos/${picdata.url}`,
         fbogimg : `https://storage.googleapis.com/thistinestorage/photos/${picdata.url}`,
         ogtype: "website",
-        weblink: `https://www.thistine.com/photos/${que}/`
+        weblink: `https://www.thistine.com/photo/${que}/`
       }
     return(
         <>
