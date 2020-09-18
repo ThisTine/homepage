@@ -110,7 +110,7 @@ const Photos =  ({data,loading,error,arr})=>{
         <Head>
         <title>Tine.photographer | Sittichok ouamsiri (Tine) </title>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="description" content={seo.description} />
+        <meta name="description" content={`${seo.description} ${data.photos.map(item=>(`${item.caption}`))}`} />
         <link rel="canonical" href={seo.weblink} />
         <meta itemProp="name" content={seo.title} />
         <meta itemProp="description" content={`${seo.description} ${data.photos.map(item=>(`${item.caption}`))}`}/>

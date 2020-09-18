@@ -91,7 +91,7 @@ const Project =({data,loading,error})=>{
     <meta name="description" content={`${seo.description} ${data.projects.map(item=>(`${item.name} - ${item.description}`))}`} />
     <link rel="canonical" href={seo.weblink} />
     <meta itemProp="name" content={seo.title} />
-    <meta itemProp="description" content={seo.description}/>
+    <meta itemProp="description" content={`${seo.description} ${data.projects.map(item=>(`${item.name} - ${item.description}`))}`}/>
     <meta itemProp="image" content={seo.fbogimg}/>
     <link rel="shortcut icon" href="/img/me.jpg" />
     <meta name="twitter:card" content="summary_large_image"/>

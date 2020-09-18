@@ -61,7 +61,7 @@ const About =({ loading, error, data })=>{
         <Head>
         <title>About Tine | Sittichok ouamsiri (Tine) </title>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="description" content={seo.description} />
+        <meta name="description" content={`${seo.description} ${data.awards.map(item=>(`${item.place}-${item.name}(${item.year})`))}`} />
         <link rel="canonical" href={seo.weblink} />
         <meta itemProp="name" content={seo.title} />
         <meta itemProp="description" content={`${seo.description} ${data.awards.map(item=>(`${item.place}-${item.name}(${item.year})`))}`}/>
