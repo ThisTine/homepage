@@ -89,6 +89,7 @@ const Project =({data,loading,error})=>{
     <title>Projects | Sittichok ouamsiri (Tine) </title>
     <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content={`${seo.description} ${data.projects.map(item=>(`${item.name} - ${item.description}`))}`} />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:none, max-video-preview:-1" />
     <link rel="canonical" href={seo.weblink} />
     <meta itemProp="name" content={seo.title} />
     <meta itemProp="description" content={`${seo.description} ${data.projects.map(item=>(`${item.name} - ${item.description}`))}`}/>

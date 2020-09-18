@@ -116,6 +116,7 @@ const Photos =  ({data,loading,error,arr})=>{
         <meta itemProp="description" content={`${seo.description} ${data.photos.map(item=>(`${item.caption}`))}`}/>
         <meta itemProp="image" content={seo.fbogimg}/>
         <link rel="shortcut icon" href="/img/me.jpg" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:site" content="@sir_tine"/>
         <meta name="twitter:title" content={seo.title}/>

@@ -1,0 +1,10 @@
+user-agent: *
+Allow: /
+Allow: /about/
+Allow: /about
+Allow: /projects/
+Allow: /projects
+Allow: /photos/
+Allow: /photos
+Crawl-delay: 3
+sitemap: https://www.thistine.com/sitemap.xml

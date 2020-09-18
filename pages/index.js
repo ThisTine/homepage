@@ -58,6 +58,7 @@ export default function Home() {
       <Head>
         <title>Thistine | Sittichok ouamsiri (Tine) </title>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:standard, max-video-preview:-1" />
         <meta name="description" content={seo.description} />
         <link rel="canonical" href={seo.weblink} />
         <meta itemProp="name" content={seo.title} />
