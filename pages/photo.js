@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch'
 import {useEffect} from 'react'
 import Head from 'next/head'
 import { FaFirefoxBrowser, FaInstagram } from 'react-icons/fa'
-import Footer from '../../components/Footer'
+import Footer from '../components/Footer'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 const Photo = ({picdata,que})=>{
