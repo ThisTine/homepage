@@ -86,7 +86,8 @@ const Picname = ({picdata,que})=>{
 }
 
 Picname.getInitialProps = async function({query}){
-    const {picname} = query;
+    const {p} = query;
+    const picname = p
     const fdatas =  await fetch('https://api.thistine.com/graphql', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
