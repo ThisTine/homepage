@@ -12,11 +12,13 @@ const Picname = ({picdata,que})=>{
     const capital = (text)=>{
         return text.charAt(0).toUpperCase() + text.slice(1)
     }
-    useEffect(()=>{
-        if(!picdata){
-            router.replace('/')
-        }
-    },[])
+    console.log(picdata)
+    console.log(que)
+    // useEffect(()=>{
+    //     if(!picdata){
+    //         router.replace('/')
+    //     }
+    // },[])
         if(!picdata){
             return (
                 <main style={{minHeight:"90vh"}}>
