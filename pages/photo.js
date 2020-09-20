@@ -5,7 +5,7 @@ import { FaFirefoxBrowser, FaInstagram } from 'react-icons/fa'
 import Footer from '../../components/Footer'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-const Picname = ({picdata,que})=>{
+const Photo = ({picdata,que})=>{
     const router = useRouter()
     const {picname} = router.query
     console.log(picname)
@@ -87,7 +87,7 @@ const Picname = ({picdata,que})=>{
     )
 }
 
-Picname.getInitialProps = async function({query}){
+Photo.getInitialProps = async function({query}){
     const {p} = query;
     const picname = p
     const fdatas =  await fetch('https://api.thistine.com/graphql', {
@@ -103,4 +103,4 @@ Picname.getInitialProps = async function({query}){
     const jdata = await fdatas.json()
     return {picdata: jdata.data.searchphoto,que: picname}
 }
-export default Picname
+export default Photo
