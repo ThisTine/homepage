@@ -93,19 +93,19 @@ const Picname = ({picdata,que})=>{
     // )
 }
 
-Picname.getInitialProps = async function({query}){
-    const {picname} = query;
-    const fdatas =  await fetch('https://api.thistine.com/graphql', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ query: `
-        { searchphoto(fileSearch:"${picname}.jpg"){
-            url
-            caption
-          }}
-        ` }),
-        })
-    const jdata = await fdatas.json()
-    return {picdata: jdata.data.searchphoto,que: picname}
-}
+// Picname.getInitialProps = async function({query}){
+//     const {picname} = query;
+//     const fdatas =  await fetch('https://api.thistine.com/graphql', {
+//         method: 'POST',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify({ query: `
+//         { searchphoto(fileSearch:"${picname}.jpg"){
+//             url
+//             caption
+//           }}
+//         ` }),
+//         })
+//     const jdata = await fdatas.json()
+//     return {picdata: jdata.data.searchphoto,que: picname}
+// }
 export default Picname
