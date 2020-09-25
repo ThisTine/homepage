@@ -1,13 +1,19 @@
 import SimpleReactLightbox,{ SRLWrapper } from "simple-react-lightbox";
 import Swiper from 'react-id-swiper'
 import Footer from "../components/Footer";
-import {gql, useQuery} from '@apollo/client'
+// import {gql, useQuery} from '@apollo/client'
 import {useEffect,useState} from 'react'
 import fetch from 'isomorphic-fetch'
 import Head from 'next/head'
 import Errors from "../components/Errors";
+import AOS from 'aos'
 
 const Photos =  ({data,loading,error,arr})=>{
+    useEffect(()=>{
+        AOS.init({
+          duration : 1000
+        })
+      },[])
     const [iserror,setiserror] = useState(false)
     const [picdata , setpicdata] = useState(arr)
 
