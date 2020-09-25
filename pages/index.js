@@ -7,10 +7,15 @@ import Projects from '../components/Projects'
 import Gallery from '../components/Gallery'
 import Service from '../components/Services'
 import Footer from '../components/Footer'
-
+import AOS from 'aos'
 
 
 export default function Home() {
+  useEffect(()=>{
+    AOS.init({
+      duration : 1000
+    })
+  },[])
   const [ispopup,setispopup] = useState(false)
   const [ispopupshow,setispopupshow] = useState(true)
   const seo = {

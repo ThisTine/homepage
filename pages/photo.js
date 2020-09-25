@@ -4,16 +4,20 @@ import Head from 'next/head'
 import { FaFirefoxBrowser, FaInstagram } from 'react-icons/fa'
 import Footer from '../components/Footer'
 import Link from 'next/link'
+import AOS from 'aos'
 import { useRouter } from 'next/router'
 const Photo = ({picdata,que})=>{
+    useEffect(()=>{
+        AOS.init({
+          duration : 1000
+        })
+      },[])
     const router = useRouter()
     const {p} = router.query
     console.log(p)
     const capital = (text)=>{
         return text.charAt(0).toUpperCase() + text.slice(1)
     }
-    console.log(picdata)
-    console.log(que)
     // useEffect(()=>{
     //     if(!picdata){
     //         router.replace('/')

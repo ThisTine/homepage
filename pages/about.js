@@ -1,22 +1,20 @@
 import AboutProgress from "../components/about-progress";
 import Footer from "../components/Footer";
 import Head from 'next/head'
-import {useState} from 'react'
-import { useQuery, gql } from '@apollo/client';
+import {useState,useEffect} from 'react'
+// import { useQuery, gql } from '@apollo/client';
 import Errors from "../components/Errors";
 
-const que = gql`
-query{awards{
-    place
-    name
-    _id
-    location
-    year
-  }}
-  `
 
+import AOS from 'aos'
 
 const About =({ loading, error, data })=>{
+    useEffect(()=>{
+        AOS.init({
+          duration : 1000
+        })
+      },[])
+
     const [iserror,setiserror] = useState(false)
     const Moredata = ()=>{
         if(error){return (

@@ -1,5 +1,5 @@
 
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import Footer from '../components/Footer'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
@@ -7,6 +7,7 @@ import { FaGithub, FaDownload, FaYoutube, FaInstagram, FaFacebook } from 'react-
 import {GoBrowser} from 'react-icons/go'
 import Errors from '../components/Errors'
 import fetch from 'isomorphic-fetch'
+import AOS from 'aos'
 const Popup = ({props,popset,ispopupshow})=>{
     return(
         <>
@@ -38,6 +39,11 @@ const Popup = ({props,popset,ispopupshow})=>{
 
 
 const Project =({data,loading,error})=>{
+    useEffect(()=>{
+        AOS.init({
+          duration : 1000
+        })
+      },[])
     const [iserror,setiserror] = useState(false)
     const router = useRouter()
     const seo = {
