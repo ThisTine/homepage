@@ -4,7 +4,7 @@ import 'swiper/css/swiper.css'
 import Navbar from '../components/Nav'
 // import {useEffect} from 'react'
 // import AOS from 'aos'
-// import fetch from 'cross-fetch'
+import fetch from 'cross-fetch'
 
 import Router from 'next/router';
 import NProgress from 'nprogress'; //nprogress module
@@ -14,20 +14,20 @@ Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-// import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
+import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 
-// const client = new ApolloClient({
-//    ssrMode: true,
-//   link: new HttpLink({ uri: 'https://api.thistine.com/graphql', fetch ,  fetchOptions: {
-//     mode: 'no-cors',
-//   }}),
-//   cache: new InMemoryCache(),
+const client = new ApolloClient({
+   ssrMode: true,
+  link: new HttpLink({ uri: 'https://api.thistine.com/graphql', fetch ,  fetchOptions: {
+    mode: 'no-cors',
+  }}),
+  cache: new InMemoryCache(),
 
-// });
+});
 
 
 
-// import { ApolloProvider } from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 
 
 
@@ -40,10 +40,10 @@ const MyApp = ({ Component, pageProps })=> {
   // },[])
     return (
       <>
-    {/* <ApolloProvider client={client}> */}
+    <ApolloProvider client={client}>
     <Navbar/>
     <Component {...pageProps} />
-    {/* </ApolloProvider> */}
+    </ApolloProvider>
       </>
     )
   }
