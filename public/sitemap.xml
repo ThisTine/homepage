@@ -4,20 +4,24 @@
     <loc>https://www.thistine.com</loc>
     <lastmod>2020-09-14</lastmod>
     <priority>1.0</priority>
+    <changefreq>monthly</changefreq>
   </url>
     <url>
     <loc>https://www.thistine.com/about/</loc>
     <lastmod>2020-09-18</lastmod>
-    <priority>0.5</priority>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
   </url>
     <url>
     <loc>https://www.thistine.com/photos/</loc>
     <lastmod>2020-09-18</lastmod>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
   </url>
 <url>
     <loc>https://www.thistine.com/projects/</loc>
     <lastmod>2020-09-18</lastmod>
-    <priority>0.5</priority>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
   </url>
 </urlset>
