@@ -90,7 +90,7 @@ const Photos =  ({data,loading,error,arr})=>{
         )}
         if(loading){return (<div className="loadercontainer"><div className="loader"></div></div>)}
         return (<div className="gallery-ga">
-                {data.photos.reverse().map((item)=>{ return(
+                {data.photos.map((item)=>{ return(
                 <div className="Img-gallery-con" key={Math.random()} > 
                 <div data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="0" >
                 <p className="Img-gallery-txt sans" data-aos="fade-up">{textcut(item.caption)}</p>
