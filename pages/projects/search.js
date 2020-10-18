@@ -59,7 +59,7 @@ const search =()=>{
     const inputref = useRef()
     const router = useRouter()
     const seo = {
-        title : "Tine.photographer | Sittichok ouamsiri (Tine)",
+        title : "Tine.photographer | Sittichok ouamsiri (Thistine)",
         description : "An information about (sittichok oaumsiri) Thistine's projects. Randomi, Typing effect, shorturl, Ouropinion",
         api : "https://api.thistine.com/",
         twiiterogimg : "https://www.thistine.com/img/twitterog-1.jpg",

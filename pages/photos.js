@@ -9,6 +9,7 @@ import Errors from "../components/Errors";
 import AOS from 'aos'
 
 const Photos =  ({data,loading,error,arr})=>{
+    const allphotodata = data.photos.reverse()
     useEffect(()=>{
         AOS.init({
           duration : 1000
@@ -47,13 +48,7 @@ const Photos =  ({data,loading,error,arr})=>{
           disableOnInteraction: false
         }
       }
-      const textcut= (text)=>{
-        if(text.length >= 30){
-            return text.slice(0,27) + "..."
-        }else{
-            return text
-        }
-    }
+
     const options = {
         settings : {
             disablePanzoom : true
@@ -66,7 +61,7 @@ const Photos =  ({data,loading,error,arr})=>{
         }
     }
     const seo = {
-        title : "Tine.photographer | Sittichok ouamsiri (Tine)",
+        title : "Tine.photographer | Sittichok ouamsiri (Thistine)",
         description : "(Sittichok ouamsiri) Thistine's picture gallery under the name Tine.photographer.",
         twiiterogimg : "https://www.thistine.com/img/tinephotograpgerogtw.jpg",
         fbogimg : "https://www.thistine.com/img/tinephotograpgerog.jpg",
@@ -76,6 +71,13 @@ const Photos =  ({data,loading,error,arr})=>{
     const textsplit = (text)=>{
         const split = text.split(".jpg");
         return split[0]
+    }
+    const textcut= (text)=>{
+        if(text.length >= 30){
+            return text.slice(0,27) + "..."
+        }else{
+            return text
+        }
     }
     useEffect(()=>{
         if(error){
@@ -90,10 +92,11 @@ const Photos =  ({data,loading,error,arr})=>{
         )}
         if(loading){return (<div className="loadercontainer"><div className="loader"></div></div>)}
         return (<div className="gallery-ga">
-                {data.photos.map((item)=>{ return(
+                {allphotodata.map((item)=>{
+                    return(
                 <div className="Img-gallery-con" key={Math.random()} > 
                 <div data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="0" >
-                <p className="Img-gallery-txt sans" data-aos="fade-up">{textcut(item.caption)}</p>
+                <p className="Img-gallery-txt sans" data-aos="fade-up">{item.caption}</p>
                 <a href={`https://storage.googleapis.com/thistinestorage/photos/${item.url}`} data-attribute="SRL">
                 <img className="Img-gallery" src={`https://storage.googleapis.com/thistinestorage/minpic/${textsplit(item.url)}-min.jpg`} alt={`Thistine | Sittichok ouamsiri | ${item.caption}`} />
                 </a>
@@ -122,10 +125,10 @@ const Photos =  ({data,loading,error,arr})=>{
         <Head>
         <title>Tine.photographer | Sittichok ouamsiri (Tine) </title>
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="description" content={`${seo.description} ${data.photos.map(item=>(`${item.caption}`))}`} />
+        <meta name="description" content={`${seo.description} ${allphotodata.map(item=>(`${item.caption}`))}`} />
         <link rel="canonical" href={seo.weblink} />
         <meta itemProp="name" content={seo.title} />
-        <meta itemProp="description" content={`${seo.description} ${data.photos.map(item=>(`${item.caption}`))}`}/>
+        <meta itemProp="description" content={`${seo.description} ${allphotodata.map(item=>(`${item.caption}`))}`}/>
         <meta itemProp="image" content={seo.fbogimg}/>
         <link rel="shortcut icon" href="/img/me.jpg" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />

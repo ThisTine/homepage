@@ -49,7 +49,7 @@ const About =({ loading, error, data })=>{
         return Math.abs(age_d.getUTCFullYear() - 1970)
      } ;
     const seo = {
-        title : "About Tine | Sittichok ouamsiri (Tine)",
+        title : "About Tine | Sittichok ouamsiri (Thistine)",
         description : `Sittichok Ouamsiri or Tine or Thistine for short.A ${age()} years old student.Know more about my basic skills,awards,favorite`,
         api : "https://api.thistine.com/",
         twiiterogimg : "https://www.thistine.com/img/twitterog-1.jpg",
