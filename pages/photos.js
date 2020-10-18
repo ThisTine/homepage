@@ -14,6 +14,12 @@ const Photos =  ({data,loading,error,arr})=>{
           duration : 1000
         })
       },[])
+      useEffect(()=>{
+        const timer = setTimeout(() => {
+          AOS.refresh();
+        }, 300);
+        return ()=> clearTimeout(timer)
+      })
     const [iserror,setiserror] = useState(false)
     const [picdata , setpicdata] = useState(arr)
 

@@ -12,6 +12,12 @@ const Photo = ({picdata,que})=>{
           duration : 1000
         })
       },[])
+      useEffect(()=>{
+        const timer = setTimeout(() => {
+          AOS.refresh();
+        }, 300);
+        return ()=> clearTimeout(timer)
+      })
     const router = useRouter()
     const {p} = router.query
     console.log(p)

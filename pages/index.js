@@ -16,6 +16,12 @@ export default function Home() {
       duration : 1000
     })
   },[])
+  useEffect(()=>{
+    const timer = setTimeout(() => {
+      AOS.refresh();
+    }, 300);
+    return ()=> clearTimeout(timer)
+  })
   const [ispopup,setispopup] = useState(false)
   const [ispopupshow,setispopupshow] = useState(true)
   const seo = {

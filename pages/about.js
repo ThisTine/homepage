@@ -14,7 +14,12 @@ const About =({ loading, error, data })=>{
           duration : 1000
         })
       },[])
-
+      useEffect(()=>{
+        const timer = setTimeout(() => {
+          AOS.refresh();
+        }, 300);
+        return ()=> clearTimeout(timer)
+      })
     const [iserror,setiserror] = useState(false)
     const Moredata = ()=>{
         if(error){return (

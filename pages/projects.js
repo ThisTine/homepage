@@ -44,6 +44,12 @@ const Project =({data,loading,error})=>{
           duration : 1000
         })
       },[])
+      useEffect(()=>{
+        const timer = setTimeout(() => {
+          AOS.refresh();
+        }, 300);
+        return ()=> clearTimeout(timer)
+      })
     const [iserror,setiserror] = useState(false)
     const router = useRouter()
     const seo = {
