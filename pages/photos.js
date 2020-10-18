@@ -9,7 +9,7 @@ import Errors from "../components/Errors";
 import AOS from 'aos'
 
 const Photos =  ({data,loading,error,arr})=>{
-    const allphotodata = data.photos.reverse()
+    const allphotodata = data.photos
     useEffect(()=>{
         AOS.init({
           duration : 1000
@@ -96,7 +96,7 @@ const Photos =  ({data,loading,error,arr})=>{
                     return(
                 <div className="Img-gallery-con" key={Math.random()} > 
                 <div data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="0" >
-                <p className="Img-gallery-txt sans" data-aos="fade-up">{item.caption}</p>
+                <p className="Img-gallery-txt sans" data-aos="fade-up">{textcut(item.caption)}</p>
                 <a href={`https://storage.googleapis.com/thistinestorage/photos/${item.url}`} data-attribute="SRL">
                 <img className="Img-gallery" src={`https://storage.googleapis.com/thistinestorage/minpic/${textsplit(item.url)}-min.jpg`} alt={`Thistine | Sittichok ouamsiri | ${item.caption}`} />
                 </a>
@@ -193,7 +193,7 @@ Photos.getInitialProps = async (ctx) =>{
         }
         return []
     }
-    
+    jdata.data.photos = jdata.data.photos.reverse()
     
     return {loading : false, data : jdata.data,error: jdata.errors,arr:randomarr(jdata.data)}
 }
