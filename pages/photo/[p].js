@@ -99,8 +99,7 @@ const Photo = ({picdata,que})=>{
 
 export async function getServerSideProps({params}){
     const {p} = params;
-    console.log(p + params)
-    const picname = "DSC_1334"
+    const picname = p
     const fdatas =  await fetch('https://api.thistine.com/graphql', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
