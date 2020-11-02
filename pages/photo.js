@@ -97,7 +97,7 @@ const Photo = ({picdata,que})=>{
     )
 }
 
-Photo.getInitialProps = async function({query}){
+export async function getStaticProps({query}){
     const {p} = query;
     const picname = p
     const fdatas =  await fetch('https://api.thistine.com/graphql', {
