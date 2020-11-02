@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch'
 import {useEffect} from 'react'
 import Head from 'next/head'
 import { FaFirefoxBrowser, FaInstagram } from 'react-icons/fa'
-import Footer from '../components/Footer'
+import Footer from '../../components/Footer'
 import Link from 'next/link'
 import AOS from 'aos'
 import { useRouter } from 'next/router'
@@ -97,9 +97,10 @@ const Photo = ({picdata,que})=>{
     )
 }
 
-export async function getStaticProps({params}){
+export async function getServerSideProps({params}){
     const {p} = params;
-    const picname = p
+    console.log(p + params)
+    const picname = "DSC_1334"
     const fdatas =  await fetch('https://api.thistine.com/graphql', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -111,6 +112,6 @@ export async function getStaticProps({params}){
         ` }),
         })
     const jdata = await fdatas.json()
-    return {picdata: jdata.data.searchphoto,que: picname}
+    return {props: {picdata: jdata.data.searchphoto,que: picname}}
 }
 export default Photo
