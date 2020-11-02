@@ -39,7 +39,7 @@ const Photo = ({picdata,que})=>{
             )
         }
     const seo = {
-        title : `${picdata.caption} (${picdata.url}.jpg)| Tine.photographer | Sittichok ouamsiri (Tine) | Thistine`,
+        title : `${picdata.caption} (${picdata.url})| Tine.photographer | Sittichok ouamsiri (Tine) | Thistine`,
         description : `"${picdata.caption}" a picture/photo taken by Sittichok ouamsiri aka. Tine.photographer or Thistine seemore picture on an instragram @tine.photographer`,
         api : "https://api.thistine.com/",
         twiiterogimg : `https://storage.googleapis.com/thistinestorage/photos/${picdata.url}`,
