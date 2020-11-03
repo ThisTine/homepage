@@ -164,7 +164,7 @@ const About =({ loading, error, data })=>{
     )
 }
 
-About.getInitialProps = async (ctx) =>{
+export async function getStaticProps(){
     const fdatas =  await fetch('https://api.thistine.com/graphql', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -180,7 +180,7 @@ About.getInitialProps = async (ctx) =>{
         })
     const jdata = await fdatas.json()
     
-    return {loading : false, data : jdata.data,error: jdata.errors}
-}
+    return { props: {loading : false, data : jdata.data,error: jdata.errors || null}}
+} 
 
 export default About

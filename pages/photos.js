@@ -173,7 +173,7 @@ const Photos =  ({data,loading,error,arr})=>{
     )
 }
 
-Photos.getInitialProps = async (ctx) =>{
+export async function getStaticProps(){
     const fdatas =  await fetch('https://api.thistine.com/graphql', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -195,7 +195,7 @@ Photos.getInitialProps = async (ctx) =>{
     }
     jdata.data.photos = jdata.data.photos.reverse()
     
-    return {loading : false, data : jdata.data,error: jdata.errors,arr:randomarr(jdata.data)}
+    return {props:{loading : false, data : jdata.data,error: jdata.errors || null,arr:randomarr(jdata.data)}}
 }
 
 
