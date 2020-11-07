@@ -19,7 +19,7 @@ const Hero = ()=>{
             window.removeEventListener("scroll",checkevent) 
         }
     }, [])
-    const style = { width:"100%",height:"100%",backgroundImage:"url('/img/DSC_6099.jpg')",backgroundPosition:"top center",backgroundAttachment:"fixed",transform: "scale("+scrolleffect+")",backgroundSize:"cover",transition:"all 0.5s"}
+    const style = { width:"100%",height:"100%",backgroundImage:"url('/img/DSC_4618-3.jpg')",backgroundPosition:"center",backgroundAttachment:"fixed",transform: "scale("+scrolleffect+")",backgroundSize:"cover",transition:"all 0.5s"}
     const blurstyle = {filter:"blur("+blureffect+"px)"}
     return(
         <div className="hero" >
