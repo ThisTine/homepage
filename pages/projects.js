@@ -177,7 +177,9 @@ export async function getStaticProps(){
         })
     const jdata = await fdatas.json()
     
-    return {props : {loading : false, data : jdata.data,error: jdata.errors || null}}
+    return {props : {loading : false, data : jdata.data,error: jdata.errors || null},
+    revalidate: 20
+}
 }
 
 export default Project

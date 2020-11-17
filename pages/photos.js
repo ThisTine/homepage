@@ -195,7 +195,9 @@ export async function getStaticProps(){
     }
     jdata.data.photos = jdata.data.photos.reverse()
     
-    return {props:{loading : false, data : jdata.data,error: jdata.errors || null,arr:randomarr(jdata.data)}}
+    return {props:{loading : false, data : jdata.data,error: jdata.errors || null,arr:randomarr(jdata.data)}
+        ,revalidate: 20
+}
 }
 
 
