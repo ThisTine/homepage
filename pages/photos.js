@@ -98,7 +98,7 @@ const Photos =  ({data,loading,error,arr})=>{
                 <div data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="0" >
                 <p className="Img-gallery-txt sans" data-aos="fade-up">{textcut(item.caption)}</p>
                 <a href={`https://storage.googleapis.com/thistinestorage/photos/${item.url}`} data-attribute="SRL">
-                <img className="Img-gallery" src={`https://storage.googleapis.com/thistinestorage/minpic/${textsplit(item.url)}-min.jpg`} alt={`Thistine | Sittichok ouamsiri | ${item.caption}`} />
+                <img className="Img-gallery" src={`https://storage.googleapis.com/thistinestorage/minpic/${textsplit(item.url)}-min.webp`} alt={`Thistine | Sittichok ouamsiri | ${item.caption}`} />
                 </a>
                 </div>
                 </div>
@@ -110,10 +110,10 @@ const Photos =  ({data,loading,error,arr})=>{
         if(picdata.length !== 0){
             return(
                 <div data-aos="fade"><Swiper {...params}>
-                    <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[0])}-min.jpg)`}}></div>
-                    <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[1])}-min.jpg)`}}></div>
-                    <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[2])}-min.jpg)`}}></div>
-                    <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[3])}-min.jpg)`}}></div>
+                    <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[0])}-min.webp)`}}></div>
+                    <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[1])}-min.webp)`}}></div>
+                    <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[2])}-min.webp)`}}></div>
+                    <div className="img-slider" data-aos="fade" style={{backgroundImage:`url(https://storage.googleapis.com/thistinestorage/minpic/${textsplit(picdata[3])}-min.webp)`}}></div>
                 </Swiper></div>
             )
         }

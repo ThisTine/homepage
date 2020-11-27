@@ -7,7 +7,7 @@ const About = ()=>{
                 <div className="About-container">
 
                 <div className="half">
-                    <img  data-aos="fade-left" className="About-img" alt="me" src="/img/me.jpg" width="100%" data-aos-delay="500"/>
+                    <img  data-aos="fade-left" className="About-img" alt="me" src="/img/me.webp" width="100%" data-aos-delay="500"/>
                 </div>
                 <div className="half About-text">
                     <h1 className="About-text-h1" data-aos="fade-down">About me</h1>

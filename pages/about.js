@@ -94,7 +94,7 @@ const About =({ loading, error, data })=>{
             </div>
             <div className="ab-wrap-haf">
                 <div className="ab-haf ab-mob-hide">
-                <img src="/img/me.jpg" width="100%" alt="Sittichok ouamsiri"/>
+                <img src="/img/me.webp" width="100%" alt="Sittichok ouamsiri"/>
                 </div>
                 <div className="ab-haf">
                     <h1 className="sans ab-fullname" style={{fontStyle:"italic"}} data-aos="fade-up">📖 Sittichok ouamsiri</h1>
