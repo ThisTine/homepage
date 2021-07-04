@@ -104,6 +104,13 @@ const Photos =  ({data,loading,error,arr})=>{
                 </div>
             )
         })}</div>)
+        // return (
+        //     <div className="newphotogallery">
+        //         {allphotodata.map(item=> <div className="photoitem">
+        //             <img src={`https://storage.googleapis.com/thistinestorage/minpic/${textsplit(item.url)}-min.webp`} alt={`Thistine | Sittichok ouamsiri | ${item.caption}`}></img>
+        //         </div>)}
+        //     </div>
+        // )
     }
 
     const Slider = ()=>{
