@@ -95,8 +95,8 @@ const Photos =  ({data,loading,error,arr})=>{
                 {allphotodata.map((item)=>{
                     return(
                 <div className="Img-gallery-con" key={Math.random()} > 
-                <div data-aos="fade-in" data-aos-duration="1500" data-aos-delay="100" data-aos-offset="0" >
-                <p className="Img-gallery-txt sans" data-aos="fade-up">{textcut(item.caption)}</p>
+                <div>
+                <p className="Img-gallery-txt sans">{textcut(item.caption)}</p>
                 <a href={`https://storage.googleapis.com/thistinestorage/photos/${item.url}`} data-attribute="SRL">
                 <img className="Img-gallery" src={`https://storage.googleapis.com/thistinestorage/minpic/${textsplit(item.url)}-min.webp`} alt={`Thistine | Sittichok ouamsiri | ${item.caption}`} />
                 </a>

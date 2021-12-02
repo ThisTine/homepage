@@ -6,13 +6,11 @@ import {useState,useEffect} from 'react'
 const Skill = ()=>{
     const [iscountyet,setiscountyet] = useState(false)
     const checkevent = ()=>{
-      const ide = document.getElementById("cerit")
-      if(ide !== null){
-        if(ide.className === "skill-cercount aos-init aos-animate"){
-          setiscountyet(true)
-        }else{
-          setiscountyet(false)
-        }   
+      const ide = document.getElementById("skills")
+      if(ide &&  ide.getBoundingClientRect().y<=500){
+        setiscountyet(true)
+      }else{
+        setiscountyet(false)
       }
  
     }
@@ -25,7 +23,7 @@ const Skill = ()=>{
         
       },[])
     return(
-        <div className="Skill">
+        <div className="Skill" id="skills">
             <div className="About-wrapper">
             <div className="Skill-top">
                 <h1 className="Skill-top-text">Skills & Ceritficates</h1>
